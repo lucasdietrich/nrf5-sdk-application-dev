@@ -1,4 +1,4 @@
-# nRF52 Blinky Demo with Visual Studio Code
+# nRF52840 Demo with Visual Studio Code
 
 Example project to setup, flash, and debug nRF52 firmware using Visual Studio Code.
 
@@ -94,11 +94,6 @@ This is only required if using a different gcc version than specified. It's reco
 
 ### Setup
 
-In `blinky/` directory, do a global search and replace to update the SDK root to wherever your nRF5_SDK directory is:
-
-- From: `SDK_ROOT := ../../../../../..`
-- To: `SDK_ROOT := $(HOME)/nRF5_SDK_15.3.0_59ac345`
-
 If required, update the following in `.vscode/c_cpp_properties.json`:
 
 - Include paths
@@ -115,7 +110,7 @@ make sdk_config
 ### Build and Flash
 
 ```bash
-cd blinky/pca10056/mbr/armgcc
+cd application
 
 # To just build. Optional `-jN` flag, where N is number of cores to use
 make

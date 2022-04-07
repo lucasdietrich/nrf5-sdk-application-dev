@@ -2,8 +2,8 @@ PROJECT_NAME     := spi_pca10056
 TARGETS          := nrf52840_xxaa
 OUTPUT_DIRECTORY := _build
 
-PROJ_DIR := ../../..
-WORKSPACE_DIR := ../../../..
+PROJ_DIR := .
+WORKSPACE_DIR := ../
 SDK_ROOT := $(WORKSPACE_DIR)/nRF5_SDK_17.1.0_ddde560
 
 $(OUTPUT_DIRECTORY)/nrf52840_xxaa.out: \
@@ -60,7 +60,7 @@ INC_FOLDERS += \
   $(SDK_ROOT)/components/libraries/strerror \
   $(SDK_ROOT)/components/toolchain/cmsis/include \
   $(SDK_ROOT)/components/libraries/util \
-  ../config \
+  config \
   $(SDK_ROOT)/components/libraries/balloc \
   $(SDK_ROOT)/components/libraries/ringbuf \
   $(SDK_ROOT)/modules/nrfx/hal \
@@ -168,7 +168,7 @@ flash: default
 erase:
 	nrfjprog -f nrf52 --eraseall
 
-SDK_CONFIG_FILE := ../config/sdk_config.h
+SDK_CONFIG_FILE := config/sdk_config.h
 CMSIS_CONFIG_TOOL := $(SDK_ROOT)/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar
 sdk_config:
 	java -jar $(CMSIS_CONFIG_TOOL) $(SDK_CONFIG_FILE)

@@ -7,7 +7,7 @@
       "label": "make flash (pca10056)",
       "type": "shell",
       "options": {
-        "cwd": "${workspaceFolder}/blinky/pca10056/blank/armgcc"
+        "cwd": "${workspaceFolder}/application"
       },
       "command": "make flash -j$(nproc)",
       "group": {
