@@ -64,7 +64,7 @@ Run the commands below to extract the archives to the respective paths.
 
 ```bash
 # Unpack SDK to home directory
-unzip nRF5_SDK_17.1.0_ddde560.zip -d $WORKSPACE
+unzip nRF5_SDK.zip -d $WORKSPACE
 
 # Unpack nRF command line tools and make accessible in terminal
 tar -xvf nRF-Command-Line-Tools_9_8_1_Linux-x86_64.tar --directory /opt/

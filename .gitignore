@@ -21,6 +21,3 @@
 
 # Segger Ozone
 *.jdebug.user
-
-# nrf5 SDK
-nRF5_SDK_17.1.0_ddde560

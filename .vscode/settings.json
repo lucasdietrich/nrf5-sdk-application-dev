@@ -10,6 +10,11 @@
   "files.associations": {
     "*.asm": "avr",
     "string.h": "c",
-    "app_error.h": "c"
+    "app_error.h": "c",
+    "nrf_log.h": "c",
+    "boards.h": "c",
+    "nrf_delay.h": "c",
+    "nrf_drv_spi.h": "c",
+    "nrf_gpio.h": "c"
   },
 }

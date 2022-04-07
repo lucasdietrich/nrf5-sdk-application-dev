@@ -7,10 +7,10 @@
             "name": "nRF SDK 15.3.0 - PCA10056",
             "includePath": [
                 "${workspaceFolder}/application/**",
-                "${workspaceFolder}/nRF5_SDK_17.1.0_ddde560/**",
-                "${workspaceFolder}/nRF5_SDK_17.1.0_ddde560/external/freertos/portable/GCC",
-                "${workspaceFolder}/nRF5_SDK_17.1.0_ddde560/external/freertos/portable/GCC/nrf52",
-                "${workspaceFolder}/nRF5_SDK_17.1.0_ddde560/external/freertos/portable/CMSIS/nrf52"
+                "${workspaceFolder}/nRF5_SDK/**",
+                "${workspaceFolder}/nRF5_SDK/external/freertos/portable/GCC",
+                "${workspaceFolder}/nRF5_SDK/external/freertos/portable/GCC/nrf52",
+                "${workspaceFolder}/nRF5_SDK/external/freertos/portable/CMSIS/nrf52"
             ],
             "forcedInclude": [
                 "${workspaceFolder}/application/config/sdk_config.h"
