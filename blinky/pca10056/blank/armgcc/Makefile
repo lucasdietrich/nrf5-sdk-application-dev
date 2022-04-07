@@ -2,8 +2,9 @@ PROJECT_NAME     := spi_pca10056
 TARGETS          := nrf52840_xxaa
 OUTPUT_DIRECTORY := _build
 
-SDK_ROOT := $(HOME)/nRF5_SDK_15.3.0_59ac345
 PROJ_DIR := ../../..
+WORKSPACE_DIR := ../../../..
+SDK_ROOT := $(WORKSPACE_DIR)/nRF5_SDK_17.1.0_ddde560
 
 $(OUTPUT_DIRECTORY)/nrf52840_xxaa.out: \
   LINKER_SCRIPT  := spi_gcc_nrf52.ld

@@ -20,8 +20,6 @@ With Visual Studio Code:
 - In `.vscode/launch.json`, update `executable` and `armToolchainPath` as required
 - In `.vscode/tasks.json`, update the current working directory `cwd` and `command` as required (ie. changing to `make flash -j8` to use 8 cores to build).
 
-![](docs/vs-code-debug.png)
-
 <p align="center"><i>Screencap of Visual Studio Code using the Cortex-Debug extension.</i></p>
 
 ## Installation
@@ -60,13 +58,13 @@ Optional:
 
 Run the commands below to extract the archives to the respective paths.
 
-- nRF5_SDK to `$HOME`
+- nRF5_SDK to `$WORKSPACE`
 - nRF Command Line Tools to `/opt/` and `/usr/local/bin`
 - gcc-arm-none-eabi to `/usr/local/bin`
 
 ```bash
 # Unpack SDK to home directory
-unzip nRF5_SDK_15.3.0_59ac345.zip -d $HOME
+unzip nRF5_SDK_17.1.0_ddde560.zip -d $WORKSPACE
 
 # Unpack nRF command line tools and make accessible in terminal
 tar -xvf nRF-Command-Line-Tools_9_8_1_Linux-x86_64.tar --directory /opt/
@@ -80,11 +78,6 @@ sudo tar -xjvf gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 --directory /usr/
 ```
 
 If optional tools are downloaded:
-
-```bash
-# Segger Ozone
-sudo apt install ./Ozone_Linux_V262_x86_64.deb
-```
 
 Check `nrfjproj --version` that it's been installed correctly.
 
@@ -136,7 +129,18 @@ make flash_softdevice
 
 Build tasks can also be added to `.vscode/tasks.json`. Pressing `CTRL+SHIFT+B` will execute the default build task (in this case, the default build task is `make flash` for `PCA10056`).
 
+### Segger UART Log
+
+UART log backend is enabled by default (see `sdk_config.h`).
+
+Connect to terminal using `screen /dev/ttyACM0 115200`.
+
 ### Segger RTT Log
+These modification should be applied to the `sdk_config.h` file in order to enable RTT backend:
+```
+#define NRF_LOG_BACKEND_RTT_ENABLED 1
+#define NRF_LOG_BACKEND_UART_ENABLED 0
+```
 
 To use the RTT Viewer equivalent on GNU/Linux, start by opening a terminal and starting `JLinkExe`.
 
@@ -200,27 +204,7 @@ Process: JLinkExe
 3. If required, update the `executable` and/or `armToolchainPath` in `.vscode/launch.json`.
 4. Hit `F5` to start debugging.
 
-#### Segger O-zone
-
-Using Segger Ozone provides rich insights on memory, assembly instructions, peripheral registers, etc.
-
-![](docs/segger-ozone.png)
-
-<p align="center"><i>Screencap of using Segger Ozone debugger.</i></p>
-
-New project settings:
-
-1. Select **Create new project**
-2. Choose target device
-    - Select device: `nRF52840_xxAA` (or other)
-    - Peripherals: (blank)
-3. Connection settings
-    - Target interface: SWD
-    - Target interface speed: 1 MHz
-    - Host interface: USB
-    - Serial no: (blank)
-4. Program file
-    - Select `pca10056/mbr/armgcc/_build/nrf52840_xxaa.out`
+![](docs/debug.png)
 
 ## Resources
 

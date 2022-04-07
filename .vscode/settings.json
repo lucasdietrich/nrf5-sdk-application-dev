@@ -4,5 +4,12 @@
   },
   "C_Cpp.clang_format_style": "file",
   "C_Cpp.clang_format_fallbackStyle": "none",
-  "editor.rulers": [90],
+  "editor.rulers": [
+    90
+  ],
+  "files.associations": {
+    "*.asm": "avr",
+    "string.h": "c",
+    "app_error.h": "c"
+  },
 }
